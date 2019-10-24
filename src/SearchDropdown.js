@@ -13,7 +13,7 @@ export class SearchDropdown extends React.Component {
           defaultValue=""
         />
         <button className="searсh-button">
-          <FontAwesomeIcon icon={faSearch} size="2x" />
+          <FontAwesomeIcon icon={faSearch} size="lg" />
         </button>
       </div>
     );
