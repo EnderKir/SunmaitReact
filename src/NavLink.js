@@ -4,7 +4,7 @@ export class NavLink extends React.Component {
     return (
       <li
         key={this.props.inner}
-        className={[this.props.mobileFlag, "navbar-link"].join(" ")}
+        className={[this.props.classFlag, "navbar-link"].join(" ")}
       >
         <a href="/#">{this.props.inner}</a>
       </li>
