@@ -1,13 +1,11 @@
 import React from "react";
-export class NavLink extends React.Component {
-  render() {
-    return (
-      <li
-        key={this.props.inner}
-        className={[this.props.classFlag, "navbar-link"].join(" ")}
-      >
-        <a href="/#">{this.props.inner}</a>
-      </li>
-    );
-  }
+export function NavLink(props) {
+  return (
+    <li
+      key={props.inner}
+      className={[props.classFlag, "navbar-link"].join(" ")}
+    >
+      <a href="/#">{props.inner}</a>
+    </li>
+  );
 }

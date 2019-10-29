@@ -1,63 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { SearchDropdown } from "./SearchDropdown";
 import { MobileNav } from "./MobileNav";
 import { BodyContainer } from "./BodyContainer";
 import { Header } from "./Header";
-export class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isSearchDropdownOpen: false,
-      isMobileMenuOpen: false
-    };
-  }
-  openSearchDropdown = () => {
-    if (!this.state.isSearchDropdownOpen) {
-      this.setState({
-        isSearchDropdownOpen: !this.state.isSearchDropdownOpen
-      });
-    }
-  };
-  closeSearchDropdown = () => {
-    if (this.state.isSearchDropdownOpen) {
-      this.setState({
-        isSearchDropdownOpen: !this.state.isSearchDropdownOpen
-      });
-    }
-  };
-  openMobileMenu = () => {
-    if (!this.state.isMobileMenuOpen) {
-      this.setState({
-        isMobileMenuOpen: !this.state.isMobileMenuOpen
-      });
-      document.getElementsByTagName("html")[0].style.overflow = "hidden";
-    }
-  };
-  closeMobileMenu = e => {
-    if (this.state.isMobileMenuOpen) {
-      if (!e.target.closest(".mobile-navigation")) {
-        this.setState({
-          isMobileMenuOpen: !this.state.isMobileMenuOpen
-        });
-        document.getElementsByTagName("html")[0].style.overflow = "";
+export function App() {
+  const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false),
+    openSearchDropdown = () => {
+      setIsSearchDropdownOpen({ isSearchDropdownOpen: true });
+    },
+    closeSearchDropdown = () => {
+      setIsSearchDropdownOpen({ isSearchDropdownOpen: false });
+    },
+    openMobileMenu = () => {
+      if (!isMobileMenuOpen.isMobileMenuOpen) {
+        setIsMobileMenuOpen({ isMobileMenuOpen: true });
+        document.getElementsByTagName("html")[0].style.overflow = "hidden";
       }
-    }
-  };
-  render() {
-    return (
-      <div onClick={this.closeMobileMenu}>
-        <Header
-          openSearchDropdown={this.openSearchDropdown}
-          searchFlag={this.state.isSearchDropdownOpen}
-          closeSearchDropdown={this.closeSearchDropdown}
-        />
-        {this.state.isSearchDropdownOpen ? <SearchDropdown /> : null}
-        <MobileNav
-          openMobileMenu={this.openMobileMenu}
-          mobileFlag={this.state.isMobileMenuOpen}
-        />
-        <BodyContainer />
-      </div>
-    );
-  }
+    },
+    closeMobileMenu = e => {
+      if (isMobileMenuOpen.isMobileMenuOpen) {
+        if (!e.target.closest(".mobile-navigation")) {
+          setIsMobileMenuOpen({ isMobileMenuOpen: false });
+          document.getElementsByTagName("html")[0].style.overflow = "";
+        }
+      }
+    };
+  return (
+    <div onClick={closeMobileMenu}>
+      <Header
+        openSearchDropdown={openSearchDropdown}
+        searchFlag={isSearchDropdownOpen.isSearchDropdownOpen}
+        closeSearchDropdown={closeSearchDropdown}
+      />
+      {isSearchDropdownOpen.isSearchDropdownOpen && <SearchDropdown />}
+      <MobileNav
+        openMobileMenu={openMobileMenu}
+        mobileFlag={isMobileMenuOpen.isMobileMenuOpen}
+      />
+      <BodyContainer />
+    </div>
+  );
 }
