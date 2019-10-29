@@ -4,10 +4,10 @@ import { NavSearch } from "./NavSearch";
 export function NavBar(props) {
   return (
     <ul className="navbar">
-      <NavLink inner="Projects" classFlag={"active"} />
-      <NavLink inner="Guides" />
-      <NavLink inner="Blog" />
-      <NavLink inner="Training &amp; Certification" />
+      <NavLink inner="Projects" classFlag={"active"} path='/'/>
+      <NavLink inner="Guides" path="/guides"/>
+      <NavLink inner="Blog" path="/blog"/>
+      <NavLink inner="Training &amp; Certification" path="trainingAndCertifation"/>
       <NavSearch
         openSearchDropdown={props.openSearchDropdown}
         searchFlag={props.searchFlag}

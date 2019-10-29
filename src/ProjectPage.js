@@ -1,7 +1,7 @@
 import React from "react";
 import { projectsArray } from "./projectsArray";
 import { ProjectsContainer } from "./ProjectsContainer";
-export function BodyContainer() {
+export function ProjectPage() {
   return (
     <div className="body-container">
       <main className="main-body">
