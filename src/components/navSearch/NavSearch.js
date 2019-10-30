@@ -7,12 +7,12 @@ export function NavSearch(props) {
   return (
     <li key={"sIcon"} className="navbar-link">
       {props.searchFlag ? (
-        <Link to="/#" onClick={props.closeSearchDropdown}>
+        <Link to="/project" onClick={props.closeSearchDropdown}>
           {props.inner}
           <FontAwesomeIcon icon={faTimes} size="lg" />
         </Link>
       ) : (
-        <Link to="/#" onClick={props.openSearchDropdown}>
+        <Link to="/project" onClick={props.openSearchDropdown}>
           {props.inner}
           <FontAwesomeIcon icon={faSearch} size="lg" />
         </Link>

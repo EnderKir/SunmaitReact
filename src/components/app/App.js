@@ -9,6 +9,8 @@ import { GuidesPage } from "../pages/guidesPage/GuidesPage";
 import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+// Спросить у Вадима: 1)как правильно сделать Навигацию с activeClass
+// 2) Как сделать, чтобы при открытии списка не переключались на новую сраницу, а оставались на той же
 export function App() {
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false),
@@ -46,7 +48,7 @@ export function App() {
           mobileFlag={isMobileMenuOpen.isMobileMenuOpen}
         />
         <Switch>
-          <Route exact path="/" component={ProjectPage} />
+          <Route exact path="/projects" component={ProjectPage} />
           <Route exact path="/home" component={HomePage} />
           <Route exact path="/guides" component={GuidesPage} />
           <Route exact path="/blog" component={BlogPage} />

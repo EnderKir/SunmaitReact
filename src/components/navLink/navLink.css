@@ -12,7 +12,7 @@
   color: #eee;
   background-color: #6db33f;
 }
-.active a {
+.active  a{
   background-color: #6db33f;
   box-shadow: none;
 }
