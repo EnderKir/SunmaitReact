@@ -6,6 +6,7 @@ import { BlogPage } from "../pages/blogPage/BlogPage";
 import { TrainingPage } from "../pages/trainingPage/TrainingPage";
 import { Header } from "../header/Header";
 import { GuidesPage } from "../pages/guidesPage/GuidesPage";
+import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 export function App() {
@@ -46,6 +47,7 @@ export function App() {
         />
         <Switch>
           <Route exact path="/" component={ProjectPage} />
+          <Route exact path="/home" component={HomePage} />
           <Route exact path="/guides" component={GuidesPage} />
           <Route exact path="/blog" component={BlogPage} />
           <Route exact path="/trainingAndCertifation" component={TrainingPage} />
