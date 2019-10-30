@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { SearchDropdown } from "../searchDropdown/SearchDropdown";
 import { MobileNav } from "../mobileNav/MobileNav";
-import { ProjectPage } from "../pages/ProjectPage";
-import { BlogPage } from "../pages/BlogPage";
-import { TrainingPage } from "../pages/TrainingPage";
+import { ProjectPage } from "../pages/projectPage/ProjectPage";
+import { BlogPage } from "../pages/blogPage/BlogPage";
+import { TrainingPage } from "../pages/trainingPage/TrainingPage";
 import { Header } from "../header/Header";
-import { GuidesPage } from "../pages/GuidesPage";
+import { GuidesPage } from "../pages/guidesPage/GuidesPage";
+import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 export function App() {
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
@@ -48,6 +49,7 @@ export function App() {
           <Route exact path="/guides" component={GuidesPage} />
           <Route exact path="/blog" component={BlogPage} />
           <Route exact path="/trainingAndCertifation" component={TrainingPage} />
+          <Route component={NoMatchPage} />
         </Switch>
       </div>
     </Router>

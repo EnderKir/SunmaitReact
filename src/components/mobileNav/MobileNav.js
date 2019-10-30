@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { MobileMenu } from "../mobileMenu/MobileMenu";
+import "./mobileNav.css"
 export function MobileNav(props) {
   return (
     <div className="mobile-nav">

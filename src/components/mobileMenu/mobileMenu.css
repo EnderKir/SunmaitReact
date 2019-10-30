@@ -1,0 +1,32 @@
+.mobile-navigation {
+  margin-top: 607px;
+  display: flex;
+  min-width: 270px;
+  background-color: #34302d;
+  z-index: 999;
+  height: 100vh;
+  min-height: 390px;
+  box-shadow: inset -1px 0 2px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  color: #fff;
+}
+.mobile-navigation .navbar-link a {
+  border-bottom: 1px solid #474441;
+  color: #f1f1f1;
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 15px;
+  text-transform: none;
+}
+.mobile-navigation .navbar-link.active a {
+  border-bottom: 1px solid transparent;
+  background-color: #262321;
+}
+.mobile-navigation .navbar-link:hover a {
+  border-bottom: 1px solid transparent;
+  background-color: #262321;
+}

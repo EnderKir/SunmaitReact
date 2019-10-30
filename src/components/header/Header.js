@@ -1,6 +1,7 @@
 import React from "react";
 import { LogoContainer } from "../logoContainer/LogoContainer";
 import { NavBar } from "../navBar/NavBar";
+import "./header.css"
 export function Header(props) {
   return (
     <header className="header desktop">

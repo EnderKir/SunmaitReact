@@ -1,0 +1,70 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  height: 340px;
+  text-align: center;
+  border: 1px solid rgba(112, 112, 112, 0.2);
+  width: 255px;
+  margin-bottom: 1vw;
+}
+.project:hover {
+  border: 1px solid black;
+}
+.project-logo-container {
+  margin-bottom: 25px;
+  height: 137px;
+  vertical-align: middle;
+}
+.project-title {
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.project-description {
+  font-size: 14px;
+  line-height: 20px;
+}
+.icon {
+  background-image: url("../../sprites/iconsprite.png");
+}
+.logo-spring-boot {
+  width: 102px;
+  height: 90px;
+  background-position: 143px 837px;
+  margin-top: 23px;
+}
+.logo-spring-framework {
+  width: 135px;
+  height: 133px;
+  background-position: 518px 837px;
+  margin-top: 2px;
+}
+.logo-spring-cloud-dataflow {
+  width: 130px;
+  height: 105px;
+  background-position: 669px 1072px;
+  margin-top: 11px;
+}
+.logo-spring-cloud {
+  width: 150px;
+  height: 111px;
+  background-position: 253px 955px;
+  margin-top: 13px;
+}
+.logo-spring-data {
+  width: 111px;
+  height: 111px;
+  background-position: 519px 512px;
+  margin-top: 13px;
+}
+.logo-spring-integration {
+  width: 145px;
+  height: 104px;
+  background-position: 361px 677px;
+  margin-top: 16px;
+}

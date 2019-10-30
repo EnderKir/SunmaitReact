@@ -1,6 +1,7 @@
 import React from "react";
-import { projectsArray } from "../../const/projectsArray";
-import { ProjectsContainer } from "../projectContainer/ProjectsContainer";
+import { projectsArray } from "../../../const/projectsArray";
+import { ProjectsContainer } from "../../projectContainer/ProjectsContainer";
+import "./projectPage.css"
 export function ProjectPage() {
   return (
     <div className="body-container">

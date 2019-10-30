@@ -1,0 +1,34 @@
+.mobile-search-container {
+  border-bottom: 1px solid #474441;
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 15px;
+  text-transform: none;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.mobile-search-container input.search-query {
+  font-size: 16px;
+  margin-bottom: 0;
+  background-color: #464340;
+  border: none;
+  font-family: helvetica neue, Helvetica, Arial, sans-serif;
+  outline: none;
+  color: #34302d;
+  height: 10px;
+  padding: 10px 5px;
+  width: 100%;
+}
+.searсh-button .icon-search {
+  font-size: 15px;
+  color: #515151;
+  color: #fff;
+}
+.searсh-button {
+  background-color: #464340;
+  padding-right: 5px;
+  border: none;
+  outline: none;
+}

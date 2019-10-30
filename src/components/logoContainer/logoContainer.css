@@ -1,0 +1,9 @@
+.spring-logo {
+  display: flex;
+  width: 224px;
+  height: 46px;
+  background: url("../../sprites/springlogo.png") -1px -1px no-repeat;
+}
+.spring-logo:hover {
+  background: url("../../sprites/springlogo.png") -1px -48px no-repeat;
+}
