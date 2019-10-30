@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { SearchDropdown } from "./SearchDropdown";
-import { MobileNav } from "./MobileNav";
-import { ProjectPage } from "./ProjectPage";
-import { BlogPage } from "./BlogPage";
-import { TrainingPage } from "./TrainingPage";
-import { Header } from "./Header";
-import { GuidesPage } from "./GuidesPage";
+import { SearchDropdown } from "../searchDropdown/SearchDropdown";
+import { MobileNav } from "../mobileNav/MobileNav";
+import { ProjectPage } from "../pages/ProjectPage";
+import { BlogPage } from "../pages/BlogPage";
+import { TrainingPage } from "../pages/TrainingPage";
+import { Header } from "../header/Header";
+import { GuidesPage } from "../pages/GuidesPage";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 export function App() {
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);

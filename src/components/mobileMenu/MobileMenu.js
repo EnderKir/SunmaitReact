@@ -1,6 +1,6 @@
 import React from "react";
-import { MobileNavLink } from "./MobileNavLink";
-import { MobileNavSearch } from "./MobileNavSearch";
+import { MobileNavLink } from "../mobileNavLink/MobileNavLink";
+import { MobileNavSearch } from "../mobileNavSearch/MobileNavSearch";
 export function MobileMenu() {
   return (
     <div className="mobile-navigation" id="mobile-navigation">

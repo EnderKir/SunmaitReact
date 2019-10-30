@@ -1,6 +1,6 @@
 import React from "react";
-import { NavLink } from "./NavLink";
-import { NavSearch } from "./NavSearch";
+import { NavLink } from "../navLink/NavLink";
+import { NavSearch } from "../navSearch/NavSearch";
 export function NavBar(props) {
   return (
     <ul className="navbar">

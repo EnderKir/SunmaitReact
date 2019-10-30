@@ -1,6 +1,6 @@
 import React from "react";
-import { LogoContainer } from "./LogoContainer";
-import { NavBar } from "./NavBar";
+import { LogoContainer } from "../logoContainer/LogoContainer";
+import { NavBar } from "../navBar/NavBar";
 export function Header(props) {
   return (
     <header className="header desktop">

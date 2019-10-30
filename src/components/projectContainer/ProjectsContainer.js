@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectsList } from "./ProjectsList";
+import { ProjectsList } from "../projectList/ProjectsList";
 export function ProjectsContainer(props) {
   return (
     <div className="projects" id="projects">
