@@ -1,17 +1,30 @@
 import React from "react";
-import { NavLink } from "../navLink/NavLink";
 import { NavSearch } from "../navSearch/NavSearch";
+import { NavLink } from "react-router-dom";
 import "./navBar.css";
 export function NavBar(props) {
   return (
     <ul className="navbar">
-      <NavLink inner="Projects" path="/projects" classFlag='active'/>
-      <NavLink inner="Guides" path="/guides" />
-      <NavLink inner="Blog" path="/blog" />
-      <NavLink
-        inner="Training &amp; Certification"
-        path="/trainingAndCertifation"
-      />
+      <li>
+        <NavLink to="/projects" className="navbar-link" activeClassName='active'>
+          Projects
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/guides" className="navbar-link" activeClassName='active'>
+          Guides
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/blog" className="navbar-link" activeClassName='active'>
+          Blog
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/trainingAndCertifation" className="navbar-link" activeClassName='active'>
+          Training &amp; Certification
+        </NavLink>
+      </li>
       <NavSearch
         openSearchDropdown={props.openSearchDropdown}
         searchFlag={props.searchFlag}
