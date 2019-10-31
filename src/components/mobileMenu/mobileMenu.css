@@ -10,7 +10,7 @@
   flex-direction: column;
   color: #fff;
 }
-.mobile-navigation .navbar-link a {
+.mobile-navigation .navbar-link {
   border-bottom: 1px solid #474441;
   color: #f1f1f1;
   display: flex;
@@ -22,11 +22,11 @@
   line-height: 15px;
   text-transform: none;
 }
-.mobile-navigation .navbar-link.active a {
+.mobile-navigation .navbar-link.active  {
   border-bottom: 1px solid transparent;
   background-color: #262321;
 }
-.mobile-navigation .navbar-link:hover a {
+.mobile-navigation .navbar-link:hover  {
   border-bottom: 1px solid transparent;
   background-color: #262321;
 }
