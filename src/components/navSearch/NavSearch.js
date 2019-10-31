@@ -8,7 +8,7 @@ export function NavSearch(props) {
     <li key={"sIcon"}>
       {props.searchFlag ? (
         <Link
-          to="/blog"
+          to='#'
           onClick={props.closeSearchDropdown}
           className="navbar-link"
         >
@@ -17,7 +17,7 @@ export function NavSearch(props) {
         </Link>
       ) : (
         <Link
-          to="/blog"
+          to="#"
           onClick={props.openSearchDropdown}
           className="navbar-link"
         >
