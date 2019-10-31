@@ -12,7 +12,7 @@ export function MobileMenu() {
         Home
         <FontAwesomeIcon icon={faChevronRight} size="lg" color="" />
       </NavLink>
-      <NavLink to="/projects" className="navbar-link" activeClassName="active">
+      <NavLink to="/" className="navbar-link" activeClassName="active">
         Projects
         <FontAwesomeIcon icon={faChevronRight} size="lg" color="" />
       </NavLink>

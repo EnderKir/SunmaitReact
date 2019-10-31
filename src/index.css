@@ -42,18 +42,5 @@ strong {
   .mobile-nav {
     display: flex !important;
   }
-  .project {
-    flex-grow: 1;
-  }
-  .project:nth-child(even) {
-    margin-left: 10px;
-  }
 }
-@media (max-width: 600px) {
-  .project {
-    flex-grow: 1;
-  }
-  .project:nth-child(even) {
-    margin-left: 0;
-  }
-}
+

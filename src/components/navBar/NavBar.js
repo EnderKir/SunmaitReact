@@ -6,7 +6,7 @@ export function NavBar(props) {
   return (
     <ul className="navbar">
       <li>
-        <NavLink to="/projects" className="navbar-link" activeClassName='active'>
+        <NavLink to="/" className="navbar-link" activeClassName='active'>
           Projects
         </NavLink>
       </li>

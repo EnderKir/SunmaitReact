@@ -46,7 +46,7 @@ export function App() {
           mobileFlag={isMobileMenuOpen}
         />
         <Switch>
-          <Route exact path="/projects" component={ProjectPage} />
+          <Route exact path="/" component={ProjectPage} />
           <Route exact path="/home" component={HomePage} />
           <Route exact path="/guides" component={GuidesPage} />
           <Route exact path="/blog" component={BlogPage} />
