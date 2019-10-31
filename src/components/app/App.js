@@ -9,27 +9,25 @@ import { GuidesPage } from "../pages/guidesPage/GuidesPage";
 import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-// Спросить у Вадима: 1)как правильно сделать Навигацию с activeClass
-// 2) Как сделать, чтобы при открытии списка не переключались на новую сраницу, а оставались на той же
 export function App() {
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false),
     openSearchDropdown = () => {
-      setIsSearchDropdownOpen({ isSearchDropdownOpen: true });
+      setIsSearchDropdownOpen(true);
     },
     closeSearchDropdown = () => {
-      setIsSearchDropdownOpen({ isSearchDropdownOpen: false });
+      setIsSearchDropdownOpen(false);
     },
     openMobileMenu = () => {
-      if (!isMobileMenuOpen.isMobileMenuOpen) {
-        setIsMobileMenuOpen({ isMobileMenuOpen: true });
+      if (!isMobileMenuOpen) {
+        setIsMobileMenuOpen(true);
         document.getElementsByTagName("html")[0].style.overflow = "hidden";
       }
     },
     closeMobileMenu = e => {
-      if (isMobileMenuOpen.isMobileMenuOpen) {
+      if (isMobileMenuOpen) {
         if (!e.target.closest(".mobile-navigation")) {
-          setIsMobileMenuOpen({ isMobileMenuOpen: false });
+          setIsMobileMenuOpen(false);
           document.getElementsByTagName("html")[0].style.overflow = "";
         }
       }
@@ -39,13 +37,13 @@ export function App() {
       <div onClick={closeMobileMenu}>
         <Header
           openSearchDropdown={openSearchDropdown}
-          searchFlag={isSearchDropdownOpen.isSearchDropdownOpen}
+          searchFlag={isSearchDropdownOpen}
           closeSearchDropdown={closeSearchDropdown}
         />
-        {isSearchDropdownOpen.isSearchDropdownOpen && <SearchDropdown />}
+        {isSearchDropdownOpen && <SearchDropdown />}
         <MobileNav
           openMobileMenu={openMobileMenu}
-          mobileFlag={isMobileMenuOpen.isMobileMenuOpen}
+          mobileFlag={isMobileMenuOpen}
         />
         <Switch>
           <Route exact path="/projects" component={ProjectPage} />
