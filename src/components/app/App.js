@@ -31,22 +31,34 @@ export const App = () => {
           document.getElementsByTagName("html")[0].style.overflow = "";
         }
       }
+    },
+    withProps = (Component, props) => {
+      return function(matchProps) {
+        return <Component {...props} {...matchProps} />;
+      };
     };
   return (
-    <Router>
+    <Router isSearchDropdownOpen={isSearchDropdownOpen}>
       <div onClick={closeMobileMenu}>
         <Header
           openSearchDropdown={openSearchDropdown}
           searchFlag={isSearchDropdownOpen}
           closeSearchDropdown={closeSearchDropdown}
         />
-        {isSearchDropdownOpen && <SearchDropdown />}
+        {/* {isSearchDropdownOpen && <SearchDropdown />} */}
+        <SearchDropdown isSearchDropdownOpen={isSearchDropdownOpen} />
         <MobileNav
           openMobileMenu={openMobileMenu}
           mobileFlag={isMobileMenuOpen}
         />
         <Switch>
-          <Route exact path="/" component={ProjectPage} />
+          <Route
+            exact
+            path="/"
+            component={withProps(ProjectPage, {
+              isSearchDropdownOpen: isSearchDropdownOpen
+            })}
+          />
           <Route exact path="/home" component={HomePage} />
           <Route exact path="/guides" component={GuidesPage} />
           <Route exact path="/blog" component={BlogPage} />

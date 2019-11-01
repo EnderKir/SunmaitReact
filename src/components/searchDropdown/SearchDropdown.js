@@ -2,9 +2,13 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./searchDropdown.css";
-export const SearchDropdown = () => {
+export const SearchDropdown = ({isSearchDropdownOpen}) => {
   return (
-    <div className="search-dropdown" id="search-dropdown">
+    <div
+      className="search-dropdown"
+      id="search-dropdown"
+      style={{ top: isSearchDropdownOpen ? "72px" : "-100px" }}
+    >
       <input
         className="search-query"
         name="q"

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const NavSearch = ({
   searchFlag,
   closeSearchDropdown,
-  openSearchDropdown,
+  openSearchDropdown
 }) => {
   return (
     <li key={"sIcon"}>
