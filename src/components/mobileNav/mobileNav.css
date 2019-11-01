@@ -4,10 +4,16 @@
   height: 50px;
   align-items: center;
 }
+.mobile-icon-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
 .mobile-menu-icon {
   color: #f1f1f1;
   font-size: 21px;
   margin-left: 13px;
+  transition: all ease 0.4s;
 }
 .icon {
   background-image: url("../../sprites/iconsprite.png");
@@ -17,5 +23,6 @@
   height: 60px;
   background-position: 904px 302px;
   transform: scale(0.5);
-  margin-left: 26%;
+  margin-left: 25%;
+  transition: all ease 0.4s;
 }

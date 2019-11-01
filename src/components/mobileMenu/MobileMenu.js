@@ -4,9 +4,13 @@ import { MobileNavSearch } from "../mobileNavSearch/MobileNavSearch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import "./mobileMenu.css";
-export const MobileMenu = () => {
+export const MobileMenu = ({ mobileFlag }) => {
   return (
-    <div className="mobile-navigation" id="mobile-navigation">
+    <div
+      className="mobile-navigation"
+      id="mobile-navigation"
+      style={{ left: mobileFlag ? "0" : "-400px" }}
+    >
       <MobileNavSearch />
       <NavLink to="/home" className="navbar-link" activeClassName="active">
         Home

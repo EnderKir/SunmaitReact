@@ -6,11 +6,13 @@ import "./mobileNav.css";
 export const MobileNav = ({ mobileFlag, openMobileMenu }) => {
   return (
     <div className="mobile-nav">
-      {mobileFlag ? <MobileMenu /> : null}
-      <div className="mobile-menu-icon" onClick={openMobileMenu}>
-        <FontAwesomeIcon icon={faBars} size="lg" />
+      <MobileMenu mobileFlag={mobileFlag} />
+      <div className="mobile-icon-container">
+        <div className="mobile-menu-icon" onClick={openMobileMenu}>
+          <FontAwesomeIcon icon={faBars} size="lg" />
+        </div>
+        <div className="icon icon-spring-logo-mobile"></div>
       </div>
-      <div className="icon icon-spring-logo-mobile"></div>
     </div>
   );
 };

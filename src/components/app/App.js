@@ -22,6 +22,8 @@ export const App = () => {
       if (!isMobileMenuOpen) {
         setIsMobileMenuOpen(true);
         document.getElementsByTagName("html")[0].style.overflow = "hidden";
+        document.getElementsByClassName('mobile-menu-icon')[0].style.marginLeft = '275px';
+        document.getElementsByClassName('icon-spring-logo-mobile')[0].style.marginLeft = '7%';
       }
     },
     closeMobileMenu = e => {
@@ -29,6 +31,8 @@ export const App = () => {
         if (!e.target.closest(".mobile-navigation")) {
           setIsMobileMenuOpen(false);
           document.getElementsByTagName("html")[0].style.overflow = "";
+          document.getElementsByClassName('mobile-menu-icon')[0].style.marginLeft = '';
+          document.getElementsByClassName('icon-spring-logo-mobile')[0].style.marginLeft = '';
         }
       }
     };
