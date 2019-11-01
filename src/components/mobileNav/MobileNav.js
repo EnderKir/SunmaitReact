@@ -8,10 +8,17 @@ export const MobileNav = ({ mobileFlag, openMobileMenu }) => {
     <div className="mobile-nav">
       <MobileMenu mobileFlag={mobileFlag} />
       <div className="mobile-icon-container">
-        <div className="mobile-menu-icon" onClick={openMobileMenu}>
+        <div
+          className="mobile-menu-icon"
+          onClick={openMobileMenu}
+          style={{ marginLeft: mobileFlag ? "275px" : "" }}
+        >
           <FontAwesomeIcon icon={faBars} size="lg" />
         </div>
-        <div className="icon icon-spring-logo-mobile"></div>
+        <div
+          className="icon icon-spring-logo-mobile"
+          style={{ marginLeft: mobileFlag ? "7%" : "" }}
+        ></div>
       </div>
     </div>
   );

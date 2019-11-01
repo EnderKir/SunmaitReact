@@ -8,7 +8,7 @@ import { Header } from "../header/Header";
 import { GuidesPage } from "../pages/guidesPage/GuidesPage";
 import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 export const App = () => {
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false),
@@ -22,8 +22,6 @@ export const App = () => {
       if (!isMobileMenuOpen) {
         setIsMobileMenuOpen(true);
         document.getElementsByTagName("html")[0].style.overflow = "hidden";
-        document.getElementsByClassName('mobile-menu-icon')[0].style.marginLeft = '275px';
-        document.getElementsByClassName('icon-spring-logo-mobile')[0].style.marginLeft = '7%';
       }
     },
     closeMobileMenu = e => {
@@ -31,8 +29,6 @@ export const App = () => {
         if (!e.target.closest(".mobile-navigation")) {
           setIsMobileMenuOpen(false);
           document.getElementsByTagName("html")[0].style.overflow = "";
-          document.getElementsByClassName('mobile-menu-icon')[0].style.marginLeft = '';
-          document.getElementsByClassName('icon-spring-logo-mobile')[0].style.marginLeft = '';
         }
       }
     };
@@ -54,10 +50,14 @@ export const App = () => {
           <Route exact path="/home" component={HomePage} />
           <Route exact path="/guides" component={GuidesPage} />
           <Route exact path="/blog" component={BlogPage} />
-          <Route exact path="/trainingAndCertifation" component={TrainingPage} />
+          <Route
+            exact
+            path="/trainingAndCertifation"
+            component={TrainingPage}
+          />
           <Route component={NoMatchPage} />
         </Switch>
       </div>
     </Router>
   );
-}
+};
