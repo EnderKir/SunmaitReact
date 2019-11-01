@@ -1,6 +1,6 @@
 import React from "react";
 
-export function HomePage() {
+export const HomePage = () => {
   return (
     <div className="body-container">
       <main className="main-body">
@@ -28,4 +28,4 @@ export function HomePage() {
       </main>
     </div>
   );
-}
+};

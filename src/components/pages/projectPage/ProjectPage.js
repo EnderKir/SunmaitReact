@@ -1,8 +1,8 @@
 import React from "react";
 import { projectsArray } from "../../../const/projectsArray";
 import { ProjectsContainer } from "../../projectContainer/ProjectsContainer";
-import "./projectPage.css"
-export function ProjectPage() {
+import "./projectPage.css";
+export const ProjectPage = () => {
   return (
     <div className="body-container">
       <main className="main-body">
@@ -17,4 +17,4 @@ export function ProjectPage() {
       </main>
     </div>
   );
-}
+};

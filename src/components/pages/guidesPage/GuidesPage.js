@@ -1,6 +1,6 @@
 import React from "react";
 
-export function GuidesPage() {
+export const GuidesPage = () => {
   return (
     <div className="body-container">
       <main className="main-body">
@@ -14,4 +14,4 @@ export function GuidesPage() {
       </main>
     </div>
   );
-}
+};

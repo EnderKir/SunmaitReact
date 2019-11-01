@@ -1,6 +1,6 @@
 import React from "react";
 
-export function BlogPage() {
+export const BlogPage = () => {
   return (
     <div className="body-container">
       <main className="main-body">
@@ -20,4 +20,4 @@ export function BlogPage() {
       </main>
     </div>
   );
-}
+};

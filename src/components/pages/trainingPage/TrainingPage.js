@@ -1,5 +1,5 @@
 import React from "react";
-export function TrainingPage() {
+export const TrainingPage = () => {
   return (
     <div className="body-container">
       <main className="main-body">
@@ -21,4 +21,4 @@ export function TrainingPage() {
       </main>
     </div>
   );
-}
+};

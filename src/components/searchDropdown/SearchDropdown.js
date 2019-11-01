@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./searchDropdown.css";
-export function SearchDropdown() {
+export const SearchDropdown = () => {
   return (
     <div className="search-dropdown" id="search-dropdown">
       <input
@@ -17,4 +17,4 @@ export function SearchDropdown() {
       </button>
     </div>
   );
-}
+};

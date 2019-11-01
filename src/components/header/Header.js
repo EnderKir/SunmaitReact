@@ -1,16 +1,16 @@
 import React from "react";
 import { LogoContainer } from "../logoContainer/LogoContainer";
 import { NavBar } from "../navBar/NavBar";
-import "./header.css"
-export function Header(props) {
+import "./header.css";
+export const Header = ({openSearchDropdown, searchFlag,closeSearchDropdown}) => {
   return (
     <header className="header desktop">
       <LogoContainer />
       <NavBar
-        openSearchDropdown={props.openSearchDropdown}
-        searchFlag={props.searchFlag}
-        closeSearchDropdown={props.closeSearchDropdown}
+        openSearchDropdown={openSearchDropdown}
+        searchFlag={searchFlag}
+        closeSearchDropdown={closeSearchDropdown}
       />
     </header>
   );
-}
+};

@@ -1,5 +1,5 @@
 import React from "react";
-export function NoMatchPage() {
+export const NoMatchPage = () => {
   return (
     <div className="body-container">
       <main className="main-body">
@@ -10,4 +10,4 @@ export function NoMatchPage() {
       </main>
     </div>
   );
-}
+};

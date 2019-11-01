@@ -3,28 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-export function NavSearch(props) {
+export const NavSearch = ({
+  searchFlag,
+  closeSearchDropdown,
+  openSearchDropdown,
+}) => {
   return (
     <li key={"sIcon"}>
-      {props.searchFlag ? (
-        <Link
-          to='#'
-          onClick={props.closeSearchDropdown}
-          className="navbar-link"
-        >
-          {props.inner}
+      {searchFlag ? (
+        <Link to="#" onClick={closeSearchDropdown} className="navbar-link">
           <FontAwesomeIcon icon={faTimes} size="lg" />
         </Link>
       ) : (
-        <Link
-          to="#"
-          onClick={props.openSearchDropdown}
-          className="navbar-link"
-        >
-          {props.inner}
+        <Link to="#" onClick={openSearchDropdown} className="navbar-link">
           <FontAwesomeIcon icon={faSearch} size="lg" />
         </Link>
       )}
     </li>
   );
-}
+};

@@ -9,7 +9,7 @@ import { GuidesPage } from "../pages/guidesPage/GuidesPage";
 import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-export function App() {
+export const App = () => {
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false),
     openSearchDropdown = () => {
