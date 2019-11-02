@@ -12,11 +12,11 @@ export const MobileMenu = ({ mobileFlag }) => {
       style={{ left: mobileFlag ? "0" : "-400px" }}
     >
       <MobileNavSearch />
-      <NavLink to="/home" className="navbar-link" activeClassName="active">
+      <NavLink to="/" className="navbar-link" activeClassName="active">
         Home
         <FontAwesomeIcon icon={faChevronRight} size="lg" color="" />
       </NavLink>
-      <NavLink to="/" className="navbar-link" activeClassName="active">
+      <NavLink to="/projects" className="navbar-link" activeClassName="active">
         Projects
         <FontAwesomeIcon icon={faChevronRight} size="lg" color="" />
       </NavLink>

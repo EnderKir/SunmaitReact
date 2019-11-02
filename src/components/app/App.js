@@ -45,7 +45,6 @@ export const App = () => {
           searchFlag={isSearchDropdownOpen}
           closeSearchDropdown={closeSearchDropdown}
         />
-        {/* {isSearchDropdownOpen && <SearchDropdown />} */}
         <SearchDropdown isSearchDropdownOpen={isSearchDropdownOpen} />
         <MobileNav
           openMobileMenu={openMobileMenu}
@@ -54,12 +53,12 @@ export const App = () => {
         <Switch>
           <Route
             exact
-            path="/"
+            path="/projects"
             component={withProps(ProjectPage, {
               isSearchDropdownOpen: isSearchDropdownOpen
             })}
           />
-          <Route exact path="/home" component={HomePage} />
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/guides" component={GuidesPage} />
           <Route exact path="/blog" component={BlogPage} />
           <Route
