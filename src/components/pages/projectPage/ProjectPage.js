@@ -1,12 +1,15 @@
 import React from "react";
+
 import { projectsArray } from "../../../const/projectsArray";
 import { ProjectsContainer } from "../../projectContainer/ProjectsContainer";
+
 import "./projectPage.css";
-export const ProjectPage = ({isSearchDropdownOpen}) => {
+
+export const ProjectPage = ({ searchFlag }) => {
   return (
     <div
       className="body-container"
-      style={{ marginTop: isSearchDropdownOpen ? "50px" : "" }}
+      style={{ marginTop: searchFlag ? "50px" : "" }}
     >
       <main className="main-body">
         <h1>Main Projects</h1>

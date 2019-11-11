@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import { SearchDropdown } from "../searchDropdown/SearchDropdown";
 import { MobileNav } from "../mobileNav/MobileNav";
 import { ProjectPage } from "../pages/projectPage/ProjectPage";
@@ -8,65 +11,64 @@ import { Header } from "../header/Header";
 import { GuidesPage } from "../pages/guidesPage/GuidesPage";
 import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 export const App = () => {
-  const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false),
-    openSearchDropdown = () => {
-      setIsSearchDropdownOpen(true);
-    },
-    closeSearchDropdown = () => {
-      setIsSearchDropdownOpen(false);
-    },
-    openMobileMenu = () => {
-      if (!isMobileMenuOpen) {
-        setIsMobileMenuOpen(true);
-        document.getElementsByTagName("html")[0].style.overflow = "hidden";
-      }
-    },
-    closeMobileMenu = e => {
-      if (isMobileMenuOpen) {
-        if (!e.target.closest(".mobile-navigation")) {
-          setIsMobileMenuOpen(false);
-          document.getElementsByTagName("html")[0].style.overflow = "";
-        }
-      }
-    },
+  const dispatch = useDispatch();
+  const { searchFlag } = useSelector(state => ({
+      searchFlag: state.searchDropdownCondition.isSearchDropdownOpen
+    })),
     withProps = (Component, props) => {
       return function(matchProps) {
         return <Component {...props} {...matchProps} />;
       };
     };
   return (
-    <Router isSearchDropdownOpen={isSearchDropdownOpen}>
-      <div onClick={closeMobileMenu}>
-        <Header
-          openSearchDropdown={openSearchDropdown}
-          searchFlag={isSearchDropdownOpen}
-          closeSearchDropdown={closeSearchDropdown}
-        />
-        <SearchDropdown isSearchDropdownOpen={isSearchDropdownOpen} />
-        <MobileNav
-          openMobileMenu={openMobileMenu}
-          mobileFlag={isMobileMenuOpen}
-        />
+    <Router>
+      <div onClick={e => dispatch({ type: "OPEN_MOBILE_MENU", e: e })}>
+        <Header />
+        <SearchDropdown />
+        <MobileNav />
         <Switch>
           <Route
             exact
             path="/projects"
             component={withProps(ProjectPage, {
-              isSearchDropdownOpen: isSearchDropdownOpen
+              searchFlag: searchFlag
             })}
           />
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/guides" component={GuidesPage} />
-          <Route exact path="/blog" component={BlogPage} />
+          <Route
+            exact
+            path="/"
+            component={withProps(HomePage, {
+              searchFlag: searchFlag
+            })}
+          />
+          <Route
+            exact
+            path="/guides"
+            component={withProps(GuidesPage, {
+              searchFlag: searchFlag
+            })}
+          />
+          <Route
+            exact
+            path="/blog"
+            component={withProps(BlogPage, {
+              searchFlag: searchFlag
+            })}
+          />
           <Route
             exact
             path="/trainingAndCertifation"
-            component={TrainingPage}
+            component={withProps(TrainingPage, {
+              searchFlag: searchFlag
+            })}
           />
-          <Route component={NoMatchPage} />
+          <Route
+            component={withProps(NoMatchPage, {
+              searchFlag: searchFlag
+            })}
+          />
         </Switch>
       </div>
     </Router>

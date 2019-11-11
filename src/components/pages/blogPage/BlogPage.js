@@ -1,8 +1,11 @@
 import React from "react";
 
-export const BlogPage = () => {
+export const BlogPage = ({ searchFlag }) => {
   return (
-    <div className="body-container">
+    <div
+      className="body-container"
+      style={{ marginTop: searchFlag ? "50px" : "" }}
+    >
       <main className="main-body">
         <h1>This Week in Spring - October 29th, 2019</h1>
         <p className="about">

@@ -1,13 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 import "./searchDropdown.css";
-export const SearchDropdown = ({isSearchDropdownOpen}) => {
+
+export const SearchDropdown = () => {
+  const { searchFlag } = useSelector(state => ({
+    searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
+  }));
   return (
     <div
       className="search-dropdown"
       id="search-dropdown"
-      style={{ top: isSearchDropdownOpen ? "72px" : "-100px" }}
+      style={{ top: searchFlag ? "72px" : "-100px" }}
     >
       <input
         className="search-query"
