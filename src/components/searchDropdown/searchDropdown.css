@@ -1,6 +1,6 @@
 .search-dropdown {
   display: flex;
-  position: fixed;
+  position: absolute;
   width: 100%;
   transition: all ease 0.7s;
   z-index: -1;
