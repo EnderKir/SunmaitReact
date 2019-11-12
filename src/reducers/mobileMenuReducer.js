@@ -1,4 +1,4 @@
-const CHANGE_MOBILE_MENU_CONDITION = "CHANGE_MOBILE_MENU_CONDITION";
+import { CHANGE_MOBILE_MENU_CONDITION } from '../const/mobileMenuAction'
 
 const initialState = {
   isMobileMenuOpen: false

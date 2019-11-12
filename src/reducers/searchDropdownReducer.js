@@ -1,5 +1,4 @@
-const OPEN_SEARCH_DROPDOWN = 'OPEN_SEARCH_DROPDOWN';
-const CLOSE_SEARCH_DROPDOWN = "CLOSE_SEARCH_DROPDOWN";
+import { OPEN_SEARCH_DROPDOWN, CLOSE_SEARCH_DROPDOWN } from '../const/searchDropdownAction'
 
 const initialState = {
   isSearchDropdownOpen: false
