@@ -1,7 +1,11 @@
 import React from "react";
-export const TrainingPage = () => {
+
+export const TrainingPage = ({ searchFlag }) => {
   return (
-    <div className="body-container">
+    <div
+      className="body-container"
+      style={{ marginTop: searchFlag ? "50px" : "" }}
+    >
       <main className="main-body">
         <h1>Spring Training</h1>
         <p className="about">

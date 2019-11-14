@@ -1,8 +1,11 @@
 import React from "react";
 
-export const HomePage = () => {
+export const HomePage = ({ searchFlag }) => {
   return (
-    <div className="body-container">
+    <div
+      className="body-container"
+      style={{ marginTop: searchFlag ? "50px" : "" }}
+    >
       <main className="main-body">
         <h1>Spring: the source for modern java</h1>
         <h2 color="green">Spring Boot</h2>

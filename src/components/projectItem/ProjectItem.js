@@ -1,5 +1,7 @@
 import React from "react";
+
 import "./projectItem.css";
+
 export const ProjectItem = ({ project }) => {
   return (
     <div className="project">

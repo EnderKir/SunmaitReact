@@ -1,8 +1,11 @@
 import React from "react";
 
-export const GuidesPage = () => {
+export const GuidesPage = ({ searchFlag }) => {
   return (
-    <div className="body-container">
+    <div
+      className="body-container"
+      style={{ marginTop: searchFlag ? "50px" : "" }}
+    >
       <main className="main-body">
         <h1>Guides</h1>
         <p className="about">

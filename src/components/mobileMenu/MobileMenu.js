@@ -1,10 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 import { MobileNavSearch } from "../mobileNavSearch/MobileNavSearch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 import "./mobileMenu.css";
-export const MobileMenu = ({ mobileFlag }) => {
+
+export const MobileMenu = ({mobileFlag}) => {
   return (
     <div
       className="mobile-navigation"
@@ -39,3 +42,4 @@ export const MobileMenu = ({ mobileFlag }) => {
     </div>
   );
 };
+

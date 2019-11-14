@@ -1,16 +1,19 @@
 import React from "react";
-import { NavSearch } from "../navSearch/NavSearch";
 import { NavLink } from "react-router-dom";
+
+import { NavSearch } from "../navSearch/NavSearch";
+
 import "./navBar.css";
-export const NavBar = ({
-  openSearchDropdown,
-  searchFlag,
-  closeSearchDropdown
-}) => {
+
+export const NavBar = () => {
   return (
     <ul className="navbar">
       <li>
-        <NavLink to="/projects" className="navbar-link" activeClassName="active">
+        <NavLink
+          to="/projects"
+          className="navbar-link"
+          activeClassName="active"
+        >
           Projects
         </NavLink>
       </li>
@@ -33,11 +36,8 @@ export const NavBar = ({
           Training &amp; Certification
         </NavLink>
       </li>
-      <NavSearch
-        openSearchDropdown={openSearchDropdown}
-        searchFlag={searchFlag}
-        closeSearchDropdown={closeSearchDropdown}
-      />
+      <NavSearch />
     </ul>
   );
 };
+
