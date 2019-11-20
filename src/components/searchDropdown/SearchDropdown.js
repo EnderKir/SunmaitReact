@@ -10,6 +10,9 @@ export const SearchDropdown = () => {
   const { searchFlag } = useSelector(state => ({
     searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
   }));
+  const handleInput = () => {
+    console.log('aaa');
+  };
   return (
     <div
       className="search-dropdown"
@@ -22,6 +25,7 @@ export const SearchDropdown = () => {
         placeholder="Search for documentation, guides, and posts..."
         type="text"
         defaultValue=""
+        onChange={handleInput}
       />
       <button className="searсh-button">
         <FontAwesomeIcon icon={faSearch} size="lg" />
