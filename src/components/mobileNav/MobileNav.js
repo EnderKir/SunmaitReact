@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +12,11 @@ export const MobileNav = () => {
   const { mobileFlag } = useSelector(state => ({
     mobileFlag: state.mobileMenuCondition.isMobileMenuOpen
   }));
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    document.body.classList.add("stop-scrolling");
+    dispatch({ type: "OPEN_MOBILE_MENU" });
+  };
   return (
     <div className="mobile-nav">
       <MobileMenu mobileFlag={mobileFlag} />
@@ -19,6 +24,7 @@ export const MobileNav = () => {
         <div
           className="mobile-menu-icon"
           style={{ marginLeft: mobileFlag ? "275px" : "" }}
+          onClick={handleClick}
         >
           <FontAwesomeIcon icon={faBars} size="lg" />
         </div>

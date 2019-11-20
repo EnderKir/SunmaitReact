@@ -10,6 +10,7 @@
   flex-direction: column;
   color: #fff;
   transition: all ease 0.4s;
+  z-index: 3;
 }
 .mobile-navigation .navbar-link {
   border-bottom: 1px solid #474441;

@@ -1,4 +1,5 @@
-import { CHANGE_MOBILE_MENU_CONDITION } from '../const/mobileMenuAction'
+import { OPEN_MOBILE_MENU } from "../const/mobileMenuActions";
+import { CLOSE_MOBILE_MENU } from "../const/mobileMenuActions";
 
 const initialState = {
   isMobileMenuOpen: false
@@ -6,8 +7,10 @@ const initialState = {
 
 export function mobileMenuReducer(state = initialState, action) {
   switch (action.type) {
-    case CHANGE_MOBILE_MENU_CONDITION:
-      return { ...state, isMobileMenuOpen: !state.isMobileMenuOpen };
+    case OPEN_MOBILE_MENU:
+      return { ...state, isMobileMenuOpen: true };
+    case CLOSE_MOBILE_MENU:
+      return { ...state, isMobileMenuOpen: false };
     default:
       return state;
   }
