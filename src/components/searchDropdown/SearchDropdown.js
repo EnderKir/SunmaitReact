@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -8,11 +8,9 @@ import "./searchDropdown.css";
 
 export const SearchDropdown = () => {
   const { searchFlag } = useSelector(state => ({
-    searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
+    searchFlag: state.searchDropdownCondition.isSearchDropdownOpen
   }));
-  const handleInput = () => {
-    console.log('aaa');
-  };
+  const dispatch = useDispatch();
   return (
     <div
       className="search-dropdown"
@@ -25,7 +23,9 @@ export const SearchDropdown = () => {
         placeholder="Search for documentation, guides, and posts..."
         type="text"
         defaultValue=""
-        onChange={handleInput}
+        onChange={e => {
+          dispatch({ type: "CHANGE_INPUT_VALUE", value: e.target.value });
+        }}
       />
       <button className="searсh-button">
         <FontAwesomeIcon icon={faSearch} size="lg" />

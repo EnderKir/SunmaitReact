@@ -12,10 +12,12 @@ import { Header } from "../header/Header";
 import { GuidesPage } from "../pages/guidesPage/GuidesPage";
 import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
+import { projectsArray } from "../../const/projectsArray";
 
 export const App = () => {
-  const { searchFlag } = useSelector(state => ({
-      searchFlag: state.searchDropdownCondition.isSearchDropdownOpen
+  const { searchFlag, inputSearchValue } = useSelector(state => ({
+      searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
+      inputSearchValue: state.inputSearchValue.inputValue
     })),
     withProps = (Component, props) => {
       return function(matchProps) {
@@ -34,7 +36,17 @@ export const App = () => {
             exact
             path="/projects"
             component={withProps(ProjectPage, {
-              searchFlag: searchFlag
+              searchFlag: searchFlag,
+              projectsArray: projectsArray.filter(project => {
+                return (
+                  project.projectTitle
+                    .toLowerCase()
+                    .includes(inputSearchValue.toLowerCase()) ||
+                  project.projectDescription
+                    .toLowerCase()
+                    .includes(inputSearchValue.toLowerCase())
+                );
+              })
             })}
           />
           <Route

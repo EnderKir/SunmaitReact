@@ -6,11 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-
 export const NavSearch = () => {
   const dispatch = useDispatch();
   const { searchFlag } = useSelector(state => ({
-    searchFlag: state.searchDropdownCondition.isSearchDropdownOpen
+    searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
   }));
   return (
     <li key={"sIcon"}>

@@ -1,11 +1,11 @@
 import React from "react";
 
-import { projectsArray } from "../../../const/projectsArray";
+// import { projectsArray } from "../../../const/projectsArray";
 import { ProjectsContainer } from "../../projectContainer/ProjectsContainer";
 
 import "./projectPage.css";
 
-export const ProjectPage = ({ searchFlag }) => {
+export const ProjectPage = ({ searchFlag, projectsArray }) => {
   return (
     <div
       className="body-container"
