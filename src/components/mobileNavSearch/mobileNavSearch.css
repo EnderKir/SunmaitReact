@@ -21,13 +21,14 @@
   padding: 10px 5px;
   width: 100%;
 }
-.searсh-button .icon-search {
+.mobile-searсh-button .icon-search {
   font-size: 15px;
   color: #515151;
   color: #fff;
 }
-.searсh-button {
-  background-color: #464340;
+.mobile-searсh-button {
+  background-color: #464340 !important;
+  padding-top: 5px;
   padding-right: 5px;
   border: none;
   outline: none;
