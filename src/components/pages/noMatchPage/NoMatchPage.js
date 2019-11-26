@@ -1,10 +1,9 @@
 import React from "react";
 
-export const NoMatchPage = ({ searchFlag }) => {
+export const NoMatchPage = () => {
   return (
     <div
       className="body-container"
-      style={{ marginTop: searchFlag ? "50px" : "" }}
     >
       <main className="main-body">
         <h1>404</h1>

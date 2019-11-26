@@ -49,39 +49,15 @@ export const App = () => {
               })
             })}
           />
-          <Route
-            exact
-            path="/"
-            component={withProps(HomePage, {
-              searchFlag: searchFlag
-            })}
-          />
-          <Route
-            exact
-            path="/guides"
-            component={withProps(GuidesPage, {
-              searchFlag: searchFlag
-            })}
-          />
-          <Route
-            exact
-            path="/blog"
-            component={withProps(BlogPage, {
-              searchFlag: searchFlag
-            })}
-          />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/guides" component={GuidesPage} />
+          <Route exact path="/blog" component={BlogPage} />
           <Route
             exact
             path="/trainingAndCertifation"
-            component={withProps(TrainingPage, {
-              searchFlag: searchFlag
-            })}
+            component={TrainingPage}
           />
-          <Route
-            component={withProps(NoMatchPage, {
-              searchFlag: searchFlag
-            })}
-          />
+          <Route component={NoMatchPage} />
         </Switch>
       </div>
     </Router>

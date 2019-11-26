@@ -20,7 +20,7 @@ export const SearchDropdown = () => {
     <div
       className="search-dropdown"
       id="search-dropdown"
-      style={{ top: searchFlag ? "72px" : "-100px" }}
+      style={{ marginTop: searchFlag ? "0px" : "-100px" }}
     >
       <input
         className="search-query"

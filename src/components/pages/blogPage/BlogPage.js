@@ -1,10 +1,9 @@
 import React from "react";
 
-export const BlogPage = ({ searchFlag }) => {
+export const BlogPage = () => {
   return (
     <div
       className="body-container"
-      style={{ marginTop: searchFlag ? "50px" : "" }}
     >
       <main className="main-body">
         <h1>This Week in Spring - October 29th, 2019</h1>

@@ -9,14 +9,18 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 export const NavSearch = () => {
   const dispatch = useDispatch();
   const { searchFlag } = useSelector(state => ({
-    searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
+    searchFlag: state.searchDropdownCondition.isSearchDropdownOpen
   }));
+  const closeSearchDropdown = () => {
+    dispatch({ type: "CLOSE_SEARCH_DROPDOWN" });
+    dispatch({ type: "CHANGE_INPUT_VALUE", value: "" });
+  };
   return (
     <li key={"sIcon"}>
       {searchFlag ? (
         <Link
           to="#"
-          onClick={() => dispatch({ type: "CLOSE_SEARCH_DROPDOWN" })}
+          onClick={closeSearchDropdown}
           className="navbar-link"
         >
           <FontAwesomeIcon icon={faTimes} size="lg" />

@@ -1,10 +1,9 @@
 import React from "react";
 
-export const TrainingPage = ({ searchFlag }) => {
+export const TrainingPage = () => {
   return (
     <div
       className="body-container"
-      style={{ marginTop: searchFlag ? "50px" : "" }}
     >
       <main className="main-body">
         <h1>Spring Training</h1>

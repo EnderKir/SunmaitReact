@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import { NavSearch } from "../navSearch/NavSearch";
+import { NavSearch } from "../navSearchButton/NavSearchButton";
 
 import "./navBar.css";
 
