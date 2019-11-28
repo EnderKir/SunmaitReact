@@ -10,6 +10,10 @@ import "./mobileMenu.css";
 
 export const MobileMenu = ({ mobileFlag }) => {
   const dispatch = useDispatch();
+  const logInClick = () => {
+    dispatch({ type: "OPEN_MODAL_LOG" });
+    dispatch({ type: "CLOSE_MOBILE_MENU" })
+  };
   return (
     <div
       className="mobile-navigation"
@@ -17,6 +21,16 @@ export const MobileMenu = ({ mobileFlag }) => {
       style={{ left: mobileFlag ? "0" : "-400px" }}
     >
       <MobileNavSearch />
+      {true && (
+        <a
+          href="/#"
+          className="navbar-link"
+          onClick={logInClick}
+        >
+          Log In
+          <FontAwesomeIcon icon={faChevronRight} size="lg" color="" />
+        </a>
+      )}
       <NavLink
         to="/"
         className="navbar-link"

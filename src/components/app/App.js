@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { SearchDropdown } from "../searchDropdown/SearchDropdown";
+import { ModalLog } from "../modalLog/ModalLog";
 import { Overlay } from "../overlay/Overlay";
 import { MobileNav } from "../mobileNav/MobileNav";
 import { ProjectPage } from "../pages/projectPage/ProjectPage";
@@ -15,9 +16,10 @@ import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
 import { projectsArray } from "../../const/projectsArray";
 
 export const App = () => {
-  const { searchFlag, inputSearchValue } = useSelector(state => ({
+  const { searchFlag, inputSearchValue, modalLogFlag } = useSelector(state => ({
       searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
-      inputSearchValue: state.inputSearchValue.inputValue
+      inputSearchValue: state.inputSearchValue.inputValue,
+      modalLogFlag: state.modalLogCondition.isModalLogOpen
     })),
     withProps = (Component, props) => {
       return function(matchProps) {
@@ -28,6 +30,7 @@ export const App = () => {
     <Router>
       <div>
         <Overlay />
+        {modalLogFlag && <ModalLog />}
         <Header />
         <SearchDropdown />
         <MobileNav />

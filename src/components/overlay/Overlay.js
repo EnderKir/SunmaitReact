@@ -5,19 +5,21 @@ import "./overlay.css";
 
 export const Overlay = () => {
   const dispatch = useDispatch();
-  const { mobileFlag } = useSelector(state => ({
-    mobileFlag: state.mobileMenuCondition.isMobileMenuOpen
+  const { mobileFlag, modalLogFlag } = useSelector(state => ({
+    mobileFlag: state.mobileMenuCondition.isMobileMenuOpen,
+    modalLogFlag: state.modalLogCondition.isModalLogOpen
   }));
   const handleClick = () => {
     document.body.classList.remove("stop-scrolling");
     dispatch({ type: "CLOSE_MOBILE_MENU" });
+    dispatch({ type: "CLOSE_MODAL_LOG" });
   };
   return (
     <div
       className="overlay"
       style={{
-        width: mobileFlag ? "100%" : "0",
-        height: mobileFlag ? "100%" : "0"
+        width: mobileFlag || modalLogFlag ? "100%" : "0",
+        height: mobileFlag || modalLogFlag ? "100%" : "0"
       }}
       onClick={handleClick}
     ></div>
