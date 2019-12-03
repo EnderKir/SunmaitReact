@@ -1,10 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { ProjectsContainer } from "../../projectContainer/ProjectsContainer";
 
 import "./projectPage.css";
 
 export const ProjectPage = ({ projectsArray }) => {
+  const { loggedFlag } = useSelector(state => ({
+    loggedFlag: state.loggedCondition.isLogged
+  }));
   return (
     <div className="body-container">
       <main className="main-body">
@@ -15,8 +19,14 @@ export const ProjectPage = ({ projectsArray }) => {
           <strong>Spring Project</strong> to help you build it. Start small and
           use just what you need – <strong>Spring is modular by design</strong>.
         </p>
-        {(projectsArray.length === 0 && <h2>No Matches Found</h2>)}
-        <ProjectsContainer projectsArray={projectsArray} />
+        {projectsArray.length === 0 && <h2>No Matches Found</h2>}
+        <div>
+          {loggedFlag ? (
+            <ProjectsContainer projectsArray={projectsArray} />
+          ) : (
+            <h2>To view the list of projects you need to Log In</h2>
+          )}
+        </div>
       </main>
     </div>
   );

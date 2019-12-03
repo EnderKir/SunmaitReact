@@ -8,6 +8,10 @@ import "./modalLog.css";
 
 export const ModalLog = () => {
   const dispatch = useDispatch();
+  const logAction = () => {
+    dispatch({ type: "LOGGED_IN" });
+    dispatch({ type: "CLOSE_MODAL_LOG" });
+  };
   return (
     <div className="modal" id="firstLink">
       <header className="modal__header">
@@ -51,7 +55,12 @@ export const ModalLog = () => {
         >
           Cancel
         </button>
-        <button id="modal-save" className="modal__save" title="Сохранить">
+        <button
+          id="modal-save"
+          className="modal__save"
+          title="Сохранить"
+          onClick={logAction}
+        >
           Log In
         </button>
       </footer>

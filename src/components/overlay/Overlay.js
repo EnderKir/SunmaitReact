@@ -10,7 +10,6 @@ export const Overlay = () => {
     modalLogFlag: state.modalLogCondition.isModalLogOpen
   }));
   const handleClick = () => {
-    document.body.classList.remove("stop-scrolling");
     dispatch({ type: "CLOSE_MOBILE_MENU" });
     dispatch({ type: "CLOSE_MODAL_LOG" });
   };

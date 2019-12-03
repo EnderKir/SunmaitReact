@@ -21,3 +21,6 @@
   background-color: #6db33f;
   box-shadow: none;
 }
+.logIn_button {
+  line-height: 30px;
+}

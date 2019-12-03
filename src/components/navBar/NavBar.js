@@ -1,16 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { NavSearch } from "../navSearchButton/NavSearchButton";
 
 import "./navBar.css";
 
 export const NavBar = () => {
+  const { loggedFlag } = useSelector(state => ({
+    loggedFlag: state.loggedCondition.isLogged
+  }));
   const dispatch = useDispatch();
   return (
     <div>
-      {false ? (
+      {loggedFlag ? (
         <ul className="navbar">
           <li>
             <NavLink
@@ -55,7 +58,7 @@ export const NavBar = () => {
           <li>
             <a
               href="/#"
-              className="navbar-link"
+              className="navbar-link logIn_button"
               onClick={() => dispatch({ type: "OPEN_MODAL_LOG" })}
             >
               Log In
