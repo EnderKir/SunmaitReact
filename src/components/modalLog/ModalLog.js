@@ -1,5 +1,7 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { debounce } from "lodash";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -7,11 +9,23 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./modalLog.css";
 
 export const ModalLog = () => {
+  const { loginValue, passwordValue } = useSelector(state => ({
+    loginValue: state.loginData.loginValue,
+    passwordValue: state.loginData.passwordValue
+  }));
   const dispatch = useDispatch();
   const logAction = () => {
-    dispatch({ type: "LOGGED_IN" });
-    dispatch({ type: "CLOSE_MODAL_LOG" });
+    if (loginValue === "Admin" && passwordValue === "1234") {
+      dispatch({ type: "LOGGED_IN" });
+      dispatch({ type: "CLOSE_MODAL_LOG" });
+    }
   };
+  const loginChange = debounce(inputText => {
+    dispatch({ type: "CHANGE_LOGIN_VALUE", value: inputText });
+  }, 500);
+  const passwordChange = debounce(inputText => {
+    dispatch({ type: "CHANGE_PASSWORD_VALUE", value: inputText });
+  }, 500);
   return (
     <div className="modal" id="firstLink">
       <header className="modal__header">
@@ -32,6 +46,7 @@ export const ModalLog = () => {
               type="text"
               id="name"
               name="name"
+              onChange={e => loginChange(e.target.value)}
             />
           </label>
 
@@ -42,6 +57,7 @@ export const ModalLog = () => {
               type="text"
               id="password"
               name="password"
+              onChange={e => passwordChange(e.target.value)}
             />
           </label>
         </div>
