@@ -13,13 +13,14 @@ import { Header } from "../header/Header";
 import { GuidesPage } from "../pages/guidesPage/GuidesPage";
 import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
-import { projectsArray } from "../../const/projectsArray";
+// import { projectsArray } from "../../const/projectsArray";
 
 export const App = () => {
-  const { searchFlag, inputSearchValue, modalLogFlag } = useSelector(state => ({
+  const { searchFlag, inputSearchValue, modalLogFlag, projectsArray } = useSelector(state => ({
       searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
       inputSearchValue: state.inputSearchValue.inputValue,
-      modalLogFlag: state.modalLogCondition.isModalLogOpen
+      modalLogFlag: state.modalLogCondition.isModalLogOpen,
+      projectsArray: state.projectsArray.projectsArray
     })),
     withProps = (Component, props) => {
       return function(matchProps) {

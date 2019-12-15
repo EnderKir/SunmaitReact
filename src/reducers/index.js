@@ -6,6 +6,7 @@ import { inputSearchReducer } from "./inputSearchReducers";
 import { modalLogReducer } from "./modalLogReducer";
 import { loggedInReducer } from "./loggedInReducer";
 import { logInValueReducer } from "./logInValueReducer";
+import { projectsArrayReducer } from "./projectsArrayReducer";
 
 export const rootReducer = combineReducers({
   searchDropdownCondition: searchDropdownReducer,
@@ -13,5 +14,6 @@ export const rootReducer = combineReducers({
   inputSearchValue: inputSearchReducer,
   modalLogCondition: modalLogReducer,
   loggedCondition: loggedInReducer,
-  loginData:  logInValueReducer
+  loginData: logInValueReducer,
+  projectsArray: projectsArrayReducer
 });
