@@ -4,8 +4,9 @@ const Schema = mongoose.Schema;
 // create Schema
 
 const ProjectSchema = new Schema({
-  id: String,
-  name: String
+  iconClass: String,
+  projectTitle: String,
+  projectDescription: String
 });
 
 module.exports = Project = mongoose.model("project", ProjectSchema);

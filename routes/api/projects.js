@@ -12,20 +12,20 @@ router.get("/", (req, res) => {
   Project.find(function(err, res) {
     console.log(res);
     console.log(err);
-  }).then(elem => res.json(elem));
+  }).then(projects => res.json(projects));
 });
 //
 // @route   POST api/items
 // @desc    Get A Post
 // @access  Public
 
-router.post("/create", (req, res) => {
-  new Project({
-    id: "3",
-    name: "kak zaebalo"
-  })
-    .save()
-    .then(item => res.json(item));
-});
+// router.post("/create", (req, res) => {
+//   new Project({
+//     id: "3",
+//     name: "kak zaebalo"
+//   })
+//     .save()
+//     .then(item => res.json(item));
+// });
 
 module.exports = router;

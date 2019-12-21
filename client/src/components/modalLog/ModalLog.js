@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { debounce } from "lodash";
+import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -14,18 +15,19 @@ export const ModalLog = () => {
     passwordValue: state.loginData.passwordValue
   }));
   const dispatch = useDispatch();
+  const getProjects = () => {
+    axios.get("/projects").then(res =>
+      dispatch({
+        type: "LOAD_PROJECTS",
+        value: res.data
+      })
+    );
+  };
   const logAction = () => {
     if (loginValue === "Admin" && passwordValue === "1234") {
       dispatch({ type: "LOGGED_IN" });
       dispatch({ type: "CLOSE_MODAL_LOG" });
-      fetch("http://127.0.0.1:4000/", { method: "get" })
-        .then(response => response.json())
-        .then(data => {
-          dispatch({ type: "LOAD_PROJECTS", value: data });
-        })
-        .catch(error =>
-          console.error("Ошибка получения данных. Причина: " + error)
-        );
+      getProjects();
     }
   };
   const loginChange = debounce(inputText => {

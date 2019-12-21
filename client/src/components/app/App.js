@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
-import axios from "axios";
 
 import { SearchDropdown } from "../searchDropdown/SearchDropdown";
 import { ModalLog } from "../modalLog/ModalLog";
@@ -14,7 +13,6 @@ import { Header } from "../header/Header";
 import { GuidesPage } from "../pages/guidesPage/GuidesPage";
 import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
-// import { projectsArray } from "../../const/projectsArray";
 
 export const App = () => {
   const {
@@ -37,13 +35,8 @@ export const App = () => {
     <Router>
       <div>
         <Overlay />
-        {modalLogFlag && (
-          <ModalLog
-            onClick={axios.get("/projects").then(res => {
-              console.log(res);
-            })}
-          />
-        )}
+        {console.log(projectsArray)}
+        {modalLogFlag && <ModalLog />}
         <Header />
         <SearchDropdown />
         <MobileNav />
