@@ -13,6 +13,7 @@ import { Header } from "../header/Header";
 import { GuidesPage } from "../pages/guidesPage/GuidesPage";
 import { HomePage } from "../pages/homePage/HomePage";
 import { NoMatchPage } from "../pages/noMatchPage/NoMatchPage";
+import { RegisterModal } from "../register/Register";
 
 export const App = () => {
   const {
@@ -20,11 +21,13 @@ export const App = () => {
       inputSearchValue,
       projectsArray,
       modalLogFlag,
+      registerModalFlaf
     } = useSelector(state => ({
       searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
       inputSearchValue: state.inputSearchValue.inputValue,
       projectsArray: state.projectsArray.projectsArray,
-      modalLogFlag: state.modalLogCondition.isModalLogOpen
+      modalLogFlag: state.modalLogCondition.isModalLogOpen,
+      registerModalFlaf: state.registerModalCondition.isRegisterModalOpen
     })),
     withProps = (Component, props) => {
       return function(matchProps) {
@@ -37,6 +40,7 @@ export const App = () => {
         <Overlay />
         {console.log(projectsArray)}
         {modalLogFlag && <ModalLog />}
+        {registerModalFlaf && <RegisterModal />}
         <Header />
         <SearchDropdown />
         <MobileNav />

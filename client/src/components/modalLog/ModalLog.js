@@ -15,6 +15,10 @@ export const ModalLog = () => {
     passwordValue: state.loginData.passwordValue
   }));
   const dispatch = useDispatch();
+  const openRegisterModal = () => {
+    dispatch({ type: "CLOSE_MODAL_LOG" });
+    dispatch({ type: "OPEN_REGISTER_MODAL" });
+  };
   const getProjects = () => {
     axios
       .get("/projects")
@@ -28,19 +32,38 @@ export const ModalLog = () => {
         console.log(error.res);
       });
   };
-  const logAction = () => {
-    if (loginValue === "Admin" && passwordValue === "1234") {
-      dispatch({ type: "LOGGED_IN" });
-      dispatch({ type: "CLOSE_MODAL_LOG" });
-      getProjects();
-    }
+  const loginUser = () => {
+    const userData = { email: loginValue, password: passwordValue };
+    console.log(userData);
+    axios
+      .post("/users/login", userData)
+      .then(res => {
+        dispatch({ type: "LOGGED_IN" });
+        dispatch({ type: "CLOSE_MODAL_LOG" });
+        getProjects();
+        // // Save to localStorage
+        // // Set token to localStorage
+        // const { token } = res.data;
+        // localStorage.setItem("jwtToken", token);
+        // // Set token to Auth header
+        // setAuthToken(token);
+        // // Decode token to get user data
+        // const decoded = jwt_decode(token);
+        // // Set current user
+        // dispatch(setCurrentUser(decoded));
+      })
+      .catch(err => console.log(err));
+    // dispatch({
+    //   type: GET_ERRORS,
+    //   payload: err.response.data
+    // })
   };
   const loginChange = debounce(inputText => {
     dispatch({ type: "CHANGE_LOGIN_VALUE", value: inputText });
-  }, 500);
+  }, 100);
   const passwordChange = debounce(inputText => {
     dispatch({ type: "CHANGE_PASSWORD_VALUE", value: inputText });
-  }, 500);
+  }, 100);
   return (
     <div className="modal" id="firstLink">
       <header className="modal__header">
@@ -55,7 +78,7 @@ export const ModalLog = () => {
       <main className="modal__content">
         <div className="form-field">
           <label>
-            Your Login:{" "}
+            Your email:{" "}
             <input
               className="input__default"
               type="text"
@@ -80,6 +103,13 @@ export const ModalLog = () => {
 
       <footer className="modal__footer">
         <button
+          className="open__register"
+          title="Открыть регистрацию"
+          onClick={openRegisterModal}
+        >
+          Register
+        </button>
+        <button
           className="modal__cancel"
           title="Отмена"
           onClick={() => dispatch({ type: "CLOSE_MODAL_LOG" })}
@@ -90,7 +120,7 @@ export const ModalLog = () => {
           id="modal-save"
           className="modal__save"
           title="Log In"
-          onClick={logAction}
+          onClick={loginUser}
         >
           Log In
         </button>
