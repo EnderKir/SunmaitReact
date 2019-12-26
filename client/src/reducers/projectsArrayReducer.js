@@ -1,4 +1,4 @@
-import { LOAD_PROJECTS } from "../const/projectsArrayAction";
+import { GET_PROJECTS } from "../const/projectsArrayAction";
 
 const initialState = {
   projectsArray: []
@@ -6,7 +6,7 @@ const initialState = {
 
 export function projectsArrayReducer(state = initialState, action) {
   switch (action.type) {
-    case LOAD_PROJECTS:
+    case GET_PROJECTS:
       return { ...state, projectsArray: action.value };
     default:
       return state;

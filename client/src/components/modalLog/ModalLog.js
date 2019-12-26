@@ -16,12 +16,17 @@ export const ModalLog = () => {
   }));
   const dispatch = useDispatch();
   const getProjects = () => {
-    axios.get("/projects").then(res =>
-      dispatch({
-        type: "LOAD_PROJECTS",
-        value: res.data
-      })
-    );
+    axios
+      .get("/projects")
+      .then(res =>
+        dispatch({
+          type: "GET_PROJECTS",
+          value: res.data
+        })
+      )
+      .catch(function(error) {
+        console.log(error.res);
+      });
   };
   const logAction = () => {
     if (loginValue === "Admin" && passwordValue === "1234") {

@@ -12,8 +12,8 @@ export const rootReducer = combineReducers({
   searchDropdownCondition: searchDropdownReducer,
   mobileMenuCondition: mobileMenuReducer,
   inputSearchValue: inputSearchReducer,
-  modalLogCondition: modalLogReducer,
   loggedCondition: loggedInReducer,
+  modalLogCondition: modalLogReducer,
   loginData: logInValueReducer,
   projectsArray: projectsArrayReducer
 });

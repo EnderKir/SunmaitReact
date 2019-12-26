@@ -4,6 +4,7 @@ const router = express.Router();
 // Item Model
 const Project = require("../../models/Project");
 
+
 // @route   GET api/items
 // @desc    Get All Items
 // @access  Public
@@ -14,6 +15,7 @@ router.get("/", (req, res) => {
     console.log(err);
   }).then(projects => res.json(projects));
 });
+
 //
 // @route   POST api/items
 // @desc    Get A Post

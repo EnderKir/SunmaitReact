@@ -18,13 +18,13 @@ export const App = () => {
   const {
       searchFlag,
       inputSearchValue,
+      projectsArray,
       modalLogFlag,
-      projectsArray
     } = useSelector(state => ({
       searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
       inputSearchValue: state.inputSearchValue.inputValue,
-      modalLogFlag: state.modalLogCondition.isModalLogOpen,
-      projectsArray: state.projectsArray.projectsArray
+      projectsArray: state.projectsArray.projectsArray,
+      modalLogFlag: state.modalLogCondition.isModalLogOpen
     })),
     withProps = (Component, props) => {
       return function(matchProps) {

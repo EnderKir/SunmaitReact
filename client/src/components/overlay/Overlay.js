@@ -7,7 +7,7 @@ export const Overlay = () => {
   const dispatch = useDispatch();
   const { mobileFlag, modalLogFlag } = useSelector(state => ({
     mobileFlag: state.mobileMenuCondition.isMobileMenuOpen,
-    modalLogFlag: state.modalLogCondition.isModalLogOpen
+    modalLogFlag: state.modalLogCondition.isModalLogOpen,
   }));
   const handleClick = () => {
     dispatch({ type: "CLOSE_MOBILE_MENU" });
@@ -17,8 +17,8 @@ export const Overlay = () => {
     <div
       className="overlay"
       style={{
-        width: mobileFlag || modalLogFlag ? "100%" : "0",
-        height: mobileFlag || modalLogFlag ? "100%" : "0"
+        width: mobileFlag ||  modalLogFlag ? "100%" : "0",
+        height: mobileFlag ||  modalLogFlag ? "100%" : "0"
       }}
       onClick={handleClick}
     ></div>

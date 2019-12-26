@@ -10,3 +10,4 @@ const ProjectSchema = new Schema({
 });
 
 module.exports = Project = mongoose.model("project", ProjectSchema);
+
