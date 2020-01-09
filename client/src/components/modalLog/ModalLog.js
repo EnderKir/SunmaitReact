@@ -1,5 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import jwt_decode from "jwt-decode";
+import setAuthToken from "../../utils/setAuthToken";
 
 import { debounce } from "lodash";
 import axios from "axios";
@@ -41,16 +43,12 @@ export const ModalLog = () => {
         dispatch({ type: "LOGGED_IN" });
         dispatch({ type: "CLOSE_MODAL_LOG" });
         getProjects();
-        // // Save to localStorage
-        // // Set token to localStorage
-        // const { token } = res.data;
-        // localStorage.setItem("jwtToken", token);
-        // // Set token to Auth header
-        // setAuthToken(token);
-        // // Decode token to get user data
-        // const decoded = jwt_decode(token);
-        // // Set current user
-        // dispatch(setCurrentUser(decoded));
+        // Save to localStorage
+        // Set token to localStorage
+        const { token } = res.data;
+        localStorage.setItem("jwtToken", token);
+        // Set token to Auth header
+        setAuthToken(token);
       })
       .catch(err =>
         dispatch({

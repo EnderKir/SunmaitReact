@@ -13,7 +13,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
- // "start": "react-scripts start",
-//  "build": "react-scripts build",
-//     "test": "react-scripts test",
-//     "eject": "react-scripts eject",
