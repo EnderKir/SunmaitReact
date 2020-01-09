@@ -9,6 +9,7 @@ import { logInValueReducer } from "./logInValueReducer";
 import { projectsArrayReducer } from "./projectsArrayReducer";
 import { registerModalReducer } from "./registerModalReducer";
 import { registerValueReducer } from "./registerValueReducer";
+import errorReducer from "./errorReducer";
 
 export const rootReducer = combineReducers({
   searchDropdownCondition: searchDropdownReducer,
@@ -19,5 +20,6 @@ export const rootReducer = combineReducers({
   loginData: logInValueReducer,
   projectsArray: projectsArrayReducer,
   registerModalCondition: registerModalReducer,
-  registerData: registerValueReducer
+  registerData: registerValueReducer,
+  errors: errorReducer
 });

@@ -21,13 +21,13 @@ export const App = () => {
       inputSearchValue,
       projectsArray,
       modalLogFlag,
-      registerModalFlaf
+      registerModalFlaf,
     } = useSelector(state => ({
       searchFlag: state.searchDropdownCondition.isSearchDropdownOpen,
       inputSearchValue: state.inputSearchValue.inputValue,
       projectsArray: state.projectsArray.projectsArray,
       modalLogFlag: state.modalLogCondition.isModalLogOpen,
-      registerModalFlaf: state.registerModalCondition.isRegisterModalOpen
+      registerModalFlaf: state.registerModalCondition.isRegisterModalOpen,
     })),
     withProps = (Component, props) => {
       return function(matchProps) {
@@ -38,7 +38,6 @@ export const App = () => {
     <Router>
       <div>
         <Overlay />
-        {console.log(projectsArray)}
         {modalLogFlag && <ModalLog />}
         {registerModalFlaf && <RegisterModal />}
         <Header />

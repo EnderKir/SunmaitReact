@@ -14,12 +14,14 @@ export const RegisterModal = () => {
     nameValue,
     passwordValue,
     emailValue,
-    passwordConfValue
+    passwordConfValue,
+    errors
   } = useSelector(state => ({
     nameValue: state.registerData.nameValue,
     passwordValue: state.registerData.passwordValue,
     emailValue: state.registerData.emailValue,
-    passwordConfValue: state.registerData.passwordConfValue
+    passwordConfValue: state.registerData.passwordConfValue,
+    errors: state.errors
   }));
   const dispatch = useDispatch();
   const nameChange = debounce(inputText => {
@@ -45,7 +47,12 @@ export const RegisterModal = () => {
       .post("/users/register", userData)
       .then(res => dispatch({ type: "CLOSE_REGISTER_MODAL" }))
       .then(res => dispatch({ type: "OPEN_MODAL_LOG" }))
-      .catch(err => console.log(err));
+      .catch(err =>
+        dispatch({
+          type: "GET_ERRORS",
+          payload: err.response.data
+        })
+      );
   };
   return (
     <div className="modal" id="firstLink">
@@ -69,6 +76,7 @@ export const RegisterModal = () => {
               name="name"
               onChange={e => nameChange(e.target.value)}
             />
+            <span className='red-text'>{errors.name}</span>
           </label>
           <label>
             Your email:{" "}
@@ -79,6 +87,7 @@ export const RegisterModal = () => {
               name="email"
               onChange={e => emailChange(e.target.value)}
             />
+            <span className='red-text'>{errors.email}</span>
           </label>
 
           <label>
@@ -90,6 +99,7 @@ export const RegisterModal = () => {
               name="password"
               onChange={e => passwordChange(e.target.value)}
             />
+            <span className='red-text'>{errors.password}</span>
           </label>
           <label>
             Confirm your password:{" "}
@@ -100,6 +110,7 @@ export const RegisterModal = () => {
               name="passwordConf"
               onChange={e => passwordConfChange(e.target.value)}
             />
+            <span className='red-text'>{errors.password2}</span>
           </label>
         </div>
       </main>

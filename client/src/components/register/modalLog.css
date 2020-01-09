@@ -96,3 +96,7 @@
   background-color: #1e7e34;
   border-color: #1c7430;
 }
+.red-text {
+  color: red;
+  font-size: 12px;
+}

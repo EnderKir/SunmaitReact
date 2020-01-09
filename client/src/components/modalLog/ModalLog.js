@@ -10,9 +10,10 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./modalLog.css";
 
 export const ModalLog = () => {
-  const { loginValue, passwordValue } = useSelector(state => ({
+  const { loginValue, passwordValue, errors } = useSelector(state => ({
     loginValue: state.loginData.loginValue,
-    passwordValue: state.loginData.passwordValue
+    passwordValue: state.loginData.passwordValue,
+    errors: state.errors
   }));
   const dispatch = useDispatch();
   const openRegisterModal = () => {
@@ -34,7 +35,6 @@ export const ModalLog = () => {
   };
   const loginUser = () => {
     const userData = { email: loginValue, password: passwordValue };
-    console.log(userData);
     axios
       .post("/users/login", userData)
       .then(res => {
@@ -52,11 +52,12 @@ export const ModalLog = () => {
         // // Set current user
         // dispatch(setCurrentUser(decoded));
       })
-      .catch(err => console.log(err));
-    // dispatch({
-    //   type: GET_ERRORS,
-    //   payload: err.response.data
-    // })
+      .catch(err =>
+        dispatch({
+          type: "GET_ERRORS",
+          payload: err.response.data
+        })
+      );
   };
   const loginChange = debounce(inputText => {
     dispatch({ type: "CHANGE_LOGIN_VALUE", value: inputText });
@@ -86,6 +87,10 @@ export const ModalLog = () => {
               name="name"
               onChange={e => loginChange(e.target.value)}
             />
+            <span className="red-text">
+              {errors.email}
+              {errors.emailnotfound}
+            </span>
           </label>
 
           <label>
@@ -97,6 +102,10 @@ export const ModalLog = () => {
               name="password"
               onChange={e => passwordChange(e.target.value)}
             />
+            <span className="red-text">
+              {errors.password}
+              {errors.passwordincorrect}
+            </span>
           </label>
         </div>
       </main>
