@@ -22,19 +22,6 @@ export const ModalLog = () => {
     dispatch({ type: "CLOSE_MODAL_LOG" });
     dispatch({ type: "OPEN_REGISTER_MODAL" });
   };
-  const getProjects = () => {
-    axios
-      .get("/projects")
-      .then(res =>
-        dispatch({
-          type: "GET_PROJECTS",
-          value: res.data
-        })
-      )
-      .catch(function(error) {
-        console.log(error.res);
-      });
-  };
   const loginUser = () => {
     const userData = { email: loginValue, password: passwordValue };
     axios
@@ -42,7 +29,6 @@ export const ModalLog = () => {
       .then(res => {
         dispatch({ type: "LOGGED_IN" });
         dispatch({ type: "CLOSE_MODAL_LOG" });
-        getProjects();
         // Save to localStorage
         // Set token to localStorage
         const { token } = res.data;

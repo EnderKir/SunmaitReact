@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+import axios from "axios";
+
 import { NavSearch } from "../navSearchButton/NavSearchButton";
 
 import "./navBar.css";
@@ -11,11 +13,24 @@ export const NavBar = () => {
     loggedFlag: state.loggedCondition.isLogged
   }));
   const dispatch = useDispatch();
+  const getProjects = () => {
+    axios
+      .get("/projects")
+      .then(res =>
+        dispatch({
+          type: "GET_PROJECTS",
+          value: res.data
+        })
+      )
+      .catch(function(error) {
+        console.log(error.res);
+      });
+  };
   return (
     <div>
       {loggedFlag ? (
         <ul className="navbar">
-          <li>
+          <li onClick={getProjects}>
             <NavLink
               to="/projects"
               className="navbar-link"
