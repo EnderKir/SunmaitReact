@@ -1,0 +1,2 @@
+export const OPEN_MODAL_LOG = "OPEN_MODAL_LOG";
+export const CLOSE_MODAL_LOG = "CLOSE_MODAL_LOG";

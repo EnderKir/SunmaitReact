@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  margin: 0 10px 0 0;
+  align-items: center;
+}
+.navbar-link {
+  color: #eee;
+  text-transform: uppercase;
+  text-shadow: none;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 28px 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.navbar-link:hover {
+  color: #eee;
+  background-color: #6db33f;
+}
+.active {
+  background-color: #6db33f;
+  box-shadow: none;
+}
+.logIn_button {
+  line-height: 30px;
+}
